@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Welcome, {{ user.username }}!</h2>
+   <p>Your birth date: {{ user.profile.birth_date }}</p>
+{% endblock %}
