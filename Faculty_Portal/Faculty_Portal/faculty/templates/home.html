@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2>Welcome, {{ user.username }}!</h2>
+  <h2>Welcome, {{ user.profile.full_name }}!</h2>
    <p>Your birth date: {{ user.profile.birth_date }}</p>
 {% endblock %}

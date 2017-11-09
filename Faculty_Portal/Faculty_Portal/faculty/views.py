@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from Faculty_Portal.faculty.forms import SignUpForm, InfoForm
-
+from django.contrib.auth.models import User
 raw_password=" "
 @login_required
 def home(request):
@@ -28,19 +28,18 @@ def signup(request):
     return render(request, 'signup.html', {'form': form})
 
 def info(request):
+    form = InfoForm()
     if request.method == 'POST':
         form = InfoForm(request.POST)
         if form.is_valid():
-            # userinfo = form.save()
-            # userinfo.Profile.full_name = form.cleaned_data.get('full_name')
-            # userinfo.Profile.birth_date = form.cleaned_data.get('birth_date')
-            # userinfo.Profile.department = form.cleaned_data.get('department')
-           # userinfo.profile.profile_picture = form.cleaned_data.get('profile_picture')
-           # userinfo.save() 
-            form.save()
-            #raw_password = form.cleaned_data.get('password1')
-            #user = authenticate(username=user.username, password=raw_password)
-           # login(request, user)
+            userinfo = form.save(commit=False)
+            # userinfo.user = user.objects.filter(id=request.user).first() 
+            userinfo.user = request.user 
+            userinfo.full_name = form.cleaned_data.get('full_name')
+            userinfo.birth_date = form.cleaned_data.get('birth_date')
+            userinfo.department = form.cleaned_data.get('department')
+            #userinfo.profile.profile_picture = form.cleaned_data.get('profile_picture')
+            userinfo.save()
             return redirect('home')
     else:
         form = InfoForm()
