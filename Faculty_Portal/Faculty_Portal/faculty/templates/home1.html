@@ -3,72 +3,84 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="{% static 'css/abc.css' %}">
 	 	<ul>
-  		  <li><a href="#home">Home</a></li>
-		  <li><a href="#news">News</a></li>
-		  <li><a href="#contact">Contact</a></li>
 		  <li style="float:right"><a class="active" href="/login">Login</a></li>
       <li style="float:right"><a class="active" href="/signup">Sign Up</a></li>
 		</ul> 
 	</head>
 
   <body>
-    <p>
-    Welcome to the Indian Institute of Technology Guwahati Intranet site. This site is for the service of the faculty, research scholars, staff and students of IIT Guwahati.
-    Information, updates and software downloads are provided here.
-    </p>
 
     <style>
       input[type=text], select 
       {
-        width: 100%;
+        width: 400px;
+        align-self: center;
+        vertical-align: center;
         padding: 12px 20px;
         margin: 8px 0;
         display: inline-block;
         border: 1px solid #ccc;
         border-radius: 4px;
         box-sizing: border-box;
+        background-color: #363b41;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 4.25rem;
+        padding: 16px;
+        padding: 1rem;
       }
 
       input[type=submit] 
       {
-        width: 100%;
-        background-color: #4CAF50;
+        width: 240px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 4.25rem;
+        padding: 16px;
+        padding: 1rem;
+        align-self: center;
+        background-color: #d44179;
         color: white;
-        padding: 14px 20px;
         margin: 8px 0;
         border: none;
-        border-radius: 4px;
         cursor: pointer;
-      }
-
-      input[type=submit]:hover 
-      {
-        background-color: #45a049;
       }
 
       div 
       {
-        border-radius: 5px;
-        background-color: #f2f2f2;
+        background-color: transparent;
         padding: 20px;
+        text-align: center;
       }
+
     </style>
 
-    <div>
-      <form action="home/rishabh/try.html">
-        <label for="fname">Search By Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Faculty Name">
+    <br><br><br><br><br><br><br><br>
 
-        <label for="dept">Search By Department</label>
-        <select id="dept" name="Department">
+ <div>
+      <form method='POST' action="{% url 'search' %}"  >
+        {% csrf_token %}
+        <input type="text" id="id_search" name="search" placeholder="Faculty Name" style="color:#EEE ; border:0px">
+       <!--  <br>
+        <select id="dept" name="Department" style="color:#EEE ; border:0px">
           <option value="nil">Choose Option</option>
           <option value="cse">Computer Science and Engineering</option>
           <option value="mnc">Maths and Computing</option>
           <option value="eee">Electrical and Electronics Engineering</option>
         </select>
-  
-        <input type="submit" value="Search">
+        <br> -->
+        <input type="submit" value="Search" style="color:#EEE ; border:0px">
      </form>
     </div>
+<div>
+{% for user in q %}
+
+<a href="/search/{{ user.user }}">{{ user.full_name }}</a>
+<br> 
+{% endfor %}
+
+</div>
   </body>
 </html>
+
+

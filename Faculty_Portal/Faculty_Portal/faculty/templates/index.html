@@ -1,0 +1,310 @@
+﻿
+
+{% extends 'dashboardbase.html' %}
+{%block dashboard%}class="active-menu"{%endblock%}
+{% load staticfiles %}
+{% block content %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+.card {
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+.title {
+    color: grey;
+    font-size: 18px;
+}
+
+button.thi {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+a.thi {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+}
+
+button.thi:hover, a.thi:hover {
+    opacity: 0.7;
+}
+
+</style>
+
+        <!-- /. SIDEBAR MENU (navbar-side) -->
+        <div id="page-wrapper" class="page-wrapper-cls">
+            <div id="page-inner">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="page-head-line">DASHBOARD</h1>
+                    </div>
+                </div>
+                <div class="row">
+            <div class=" col-md-3 col-sm-3">
+                <div class="style-box-one Style-one-clr-one">
+                            <a href="https://intranet.iitg.ernet.in/">
+                                <i class="fa fa-share-alt" style="font-size:60px;color:white"></i>
+                                 <h5>Intranet</h5>
+                            </a>
+                        </div>
+                        </div>
+              <div class=" col-md-3 col-sm-3">
+                <div class="style-box-one Style-one-clr-two">
+                            <a href="https://webmail.iitg.ernet.in/src/login.php?secure_login=yes">
+                                <i class="material-icons" style="font-size:54px;color:white">email</i>
+                                 <h5>Webmail</h5>
+                            </a>
+                        </div>
+                        </div>
+             <div class=" col-md-3 col-sm-3">
+                <div class="style-box-one Style-one-clr-three">
+                            <a href="https://www.facebook.com/">
+                                <i class="fa fa-facebook-official" style="font-size:60px;color:white"></i>
+                                <h5>Facebook</h5>
+                            </a>
+                        </div>
+                        </div>
+              <div class=" col-md-3 col-sm-3">
+                <div class="style-box-one Style-one-clr-four">
+                            <a href="https://scholar.google.co.in/">
+                                <i class="material-icons" style="font-size:54px;color:white;">school</i>
+                                <h5>Google Scholar</h5>
+                            </a>
+                        </div>
+                        </div>      
+            </div>
+<!--             <div class="row">
+                <div class="col-md-12">
+                   <div class="alert alert-danger">
+                       Welcome to your Dashboard. 
+                   </div>
+                </div>
+            </div> -->
+
+
+        <center>
+        <form method='POST' >
+        {% csrf_token %}
+        <input type="text" id="update" name="update" placeholder="Faculty Name" style="color:#000 ; border:0px">
+        <input type="submit" value="Search" style="color:#OOO ; border:0px font-size=16px;">
+        </form>
+    </center>
+
+
+
+
+            <div class="card">
+              <h1> {{ user.profile.full_name }} </h1>
+              <p class="title"> {{ user.profile.title }}</p>
+              <p class="title"> Department of {{ user.profile.department }}</p>
+              <p class="title"> Room: {{ user.profile.room }} </p>
+              <p class="title"> Phone: {{ user.profile.phone }} </p>
+              <p style="font-size: 32px"> IIT Guwahati </p>
+              <br>
+            </div>
+
+                <!-- <div class="row">
+                    <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-warning text-center">
+                                            <i class="ti-server"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p>Capacity</p>
+                                            105GB
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                        <i class="ti-reload"></i> Updated now
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-success text-center">
+                                            <i class="ti-wallet"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p>Revenue</p>
+                                            $1,345
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                        <i class="ti-calendar"></i> Last day
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-danger text-center">
+                                            <i class="ti-pulse"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p>Errors</p>
+                                            23
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                        <i class="ti-timer"></i> In the last hour
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="card">
+                            <div class="content">
+                                <div class="row">
+                                    <div class="col-xs-5">
+                                        <div class="icon-big icon-info text-center">
+                                            <i class="ti-twitter-alt"></i>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-7">
+                                        <div class="numbers">
+                                            <p>Followers</p>
+                                            +45
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="footer">
+                                    <hr />
+                                    <div class="stats">
+                                        <i class="ti-reload"></i> Updated now
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Users Behavior</h4>
+                                <p class="category">24 Hours performance</p>
+                            </div>
+                            <div class="content">
+                                <div id="chartHours" class="ct-chart"></div>
+                                <div class="footer">
+                                    <div class="chart-legend">
+                                        <i class="fa fa-circle text-info"></i> Open
+                                        <i class="fa fa-circle text-danger"></i> Click
+                                        <i class="fa fa-circle text-warning"></i> Click Second Time
+                                    </div>
+                                    <hr>
+                                    <div class="stats">
+                                        <i class="ti-reload"></i> Updated 3 minutes ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Email Statistics</h4>
+                                <p class="category">Last Campaign Performance</p>
+                            </div>
+                            <div class="content">
+                                <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>
+
+                                <div class="footer">
+                                    <div class="chart-legend">
+                                        <i class="fa fa-circle text-info"></i> Open
+                                        <i class="fa fa-circle text-danger"></i> Bounce
+                                        <i class="fa fa-circle text-warning"></i> Unsubscribe
+                                    </div>
+                                    <hr>
+                                    <div class="stats">
+                                        <i class="ti-timer"></i> Campaign sent 2 days ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card ">
+                            <div class="header">
+                                <h4 class="title">2015 Sales</h4>
+                                <p class="category">All products including Taxes</p>
+                            </div>
+                            <div class="content">
+                                <div id="chartActivity" class="ct-chart"></div>
+
+                                <div class="footer">
+                                    <div class="chart-legend">
+                                        <i class="fa fa-circle text-info"></i> Tesla Model S
+                                        <i class="fa fa-circle text-warning"></i> BMW 5 Series
+                                    </div>
+                                    <hr>
+                                    <div class="stats">
+                                        <i class="ti-check"></i> Data information certified
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    
+          
+            </div>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+    <!-- /. WRAPPER  -->
+{% endblock %}
+

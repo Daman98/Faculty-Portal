@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+*::after, *::before {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: #FF3B3F;
+}
+
+ul, ol {
+  padding-left: 2.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+  font-family: inherit;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  color: inherit;
+}
+
+.btn-primary {
+  display: inline-block;
+  cursor: pointer;
+  color: #FFF;
+  padding: 0.5rem 1.5rem;
+  margin: 1rem auto 0 auto;
+  text-decoration: none;
+  background-color: #FF3B3F;
+  border-radius: 2px;
+  border: 0;
+  text-align: center;
+}
+
+body {
+  font-size: 0.875rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.5;
+  font-family: 'Lato', sans-serif;
+
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (min-width: 576px) {
+  body {
+    font-size: 0.995rem;
+  }
+}
+@media (min-width: 768px) {
+  body {
+    font-size: 1rem;
+  }
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (304px)[auto-fill];
+      grid-template-columns: repeat(auto-fill, 304px);
+  /* Important note: There are alot of different ways to get the 3 column layout that was used here. In order to keep the sizing dynamic without any media queries I decided to make the columns with an equal size and not use fractional units. The size of the grid is 960px, dividing that into 3 equals parts amounts to 320px but it is important to take notice of the grid gap which in this case amounts to 1rem or 16px, by subtracting that we get the 304px necessary so that each card can move to the next row whenever there is not enough space for the container to be at 960px. You could also divide the columns into 12 and make the cards span 4 columns, but in the end, it's all a matter of choice and design */
+  grid-auto-rows: minmax(max-content, 1fr);
+  grid-gap: 1rem;
+  width: 960px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Card styles for rotation */
+.rotate-container {
+  position: relative;
+}
+.rotate-container .card-front, .rotate-container .card-back {
+  width: 100%;
+  height: 100%;
+  -webkit-transform: perspective(600px) rotateY(0deg);
+          transform: perspective(600px) rotateY(0deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: all .5s linear 0s;
+  transition: all .5s linear 0s;
+}
+.rotate-container .card-back {
+  -webkit-transform: perspective(1600px) rotateY(180deg);
+          transform: perspective(1600px) rotateY(180deg);
+  position: absolute;
+  top: 0;
+}
+.rotate-container .rotate-card-front {
+  -webkit-transform: perspective(1600px) rotateY(-180deg);
+          transform: perspective(1600px) rotateY(-180deg);
+}
+.rotate-container .rotate-card-back {
+  -webkit-transform: perspective(1600px) rotateY(0deg);
+          transform: perspective(1600px) rotateY(0deg);
+}
+
+/* Modified card styles */
+.card {
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  background: #FFF;
+  border: 1px solid rgba(169, 169, 169, 0.5);
+  border-radius: .25rem;
+}
+.card .card-header {
+  padding: .75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: #EFEFEF;
+  border-bottom: 1px solid rgba(169, 169, 169, 0.5);
+}
+.card .card-header p {
+  margin: 0;
+}
+.card .card-background {
+  background: url("http://www.etchon.com/assets/images/default_cover_pic.jpg");
+  height: 8em;
+  background-position: center center;
+  background-size: cover;
+}
+.card .card-block {
+  padding: 1rem;
+}
+.card .card-block .card-title {
+  margin-bottom: 0;
+}
+.card .card-block h4 ~ h4 {
+  margin: 1rem 0 0.5rem 0;
+}
+.card .avatar {
+  max-width: 6em;
+  max-height: 6em;
+  margin-top: -4em;
+  margin-bottom: 1em;
+  border: 4px solid white;
+  border-radius: 50%;
+  background: -webkit-radial-gradient(#e3e3e3, #329a7c, #109381);
+  background: radial-gradient(#e3e3e3, #329a7c, #109381);
+}
+.card .btn {
+  margin-bottom: 1em;
+}
+.card .social-links {
+  padding-left: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.card .social-links li {
+  margin: .5em;
+}
+.card .social-links li a {
+  font-size: 1.5em;
+}

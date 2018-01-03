@@ -1,0 +1,245 @@
+// Main variables
+
+// Colors
+$carbon:                                #A9A9A9     !default;
+$watermelon:                            #FF3B3F     !default;
+$neutral:                               #EFEFEF     !default;
+$tinted-neutral:                        #E4E4E4     !default;
+$charcoal:                              #292b2c     !default;
+$white:                                    #FFF     !default;
+
+// Body
+//
+$body-bg-color:                    $tinted-neutral  !default;
+$body-color:                             $charcoal  !default;
+$btn-primary:                          $watermelon  !default;
+$a-link-color:                         $watermelon  !default;
+
+// No font family is set as default
+
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+$font-size-md:   .995rem !default;
+$font-size-sm:   .875rem !default;
+
+// Font weights
+$font-weight-normal: normal !default;
+$font-weight-bold: bold !default;
+
+// Font weight and line heigh
+$font-weight-base: $font-weight-normal !default;
+$line-height-base: 1.5 !default;
+$font-letter-spacing: 0.02rem !default;
+
+// Font sizes for headers
+$font-size-h1: 2.5rem !default;
+$font-size-h2: 2rem !default;
+$font-size-h3: 1.75rem !default;
+$font-size-h4: 1.5rem !default;
+$font-size-h5: 1.25rem !default;
+$font-size-h6: 1rem !default;
+
+// Headings defaults
+$headings-margin-bottom: 1rem !default;
+$headings-font-family:   inherit !default;
+$headings-font-weight:   500 !default;
+$headings-line-height:   1.5 !default;
+$headings-color:         inherit !default;
+
+// Main styles
+* {
+     margin: 0;
+     padding: 0;
+     outline: none;
+     box-sizing: border-box;
+
+     &::after, &::before {
+          box-sizing: border-box;
+     }
+}
+
+h1 {
+     font-size: $font-size-h1;
+}
+
+h2 {
+     font-size: $font-size-h2;
+}
+
+h3 {
+     font-size: $font-size-h3;
+}
+
+h4 {
+     font-size: $font-size-h4;
+}
+
+h5 {
+     font-size: $font-size-h5;
+}
+
+h6 {
+     font-size: $font-size-h6;
+}
+a {
+     text-decoration: none;
+     color: $a-link-color;
+}
+ul, ol {
+     padding-left: 2.5rem;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+     font-weight: $headings-font-weight;
+     font-family: $headings-font-family;
+     margin-bottom: $headings-margin-bottom;
+     line-height: $headings-line-height;
+     color: $headings-color;
+}
+
+// Helper classes
+.btn-primary {
+     display: inline-block;
+     cursor: pointer;
+     color: $white;
+     padding: 0.5rem 1.5rem;
+     margin: 1rem auto 0 auto;
+     text-decoration: none;
+     background-color: $btn-primary;
+     border-radius: 2px;
+     border: 0;
+     text-align: center;
+}
+
+// Custom CSS
+body {
+     font-size: $font-size-sm;
+     letter-spacing: $font-letter-spacing;
+     line-height: $headings-line-height;
+     font-family: 'Lato', sans-serif;
+     background: $body-bg-color;
+     color: $body-color;
+
+     // For code pen purposes only
+     height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+
+     @media (min-width: 576px) {
+          font-size: $font-size-md;
+     }
+
+     @media (min-width: 768px) {
+          font-size: $font-size-base;
+     }
+}
+
+.grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fill, 304px);  // Fills the column space dynamically without media queries
+     /* Important note: There are alot of different ways to get the 3 column layout that was used here. In order to keep the sizing dynamic without any media queries I decided to make the columns with an equal size and not use fractional units. The size of the grid is 960px, dividing that into 3 equals parts amounts to 320px but it is important to take notice of the grid gap which in this case amounts to 1rem or 16px, by subtracting that we get the 304px necessary so that each card can move to the next row whenever there is not enough space for the container to be at 960px. You could also divide the columns into 12 and make the cards span 4 columns, but in the end, it's all a matter of choice and design */
+     grid-auto-rows: minmax(max-content, 1fr); // Controls the rows dynamically without media queries
+     grid-gap: 1rem;
+     width: 960px;
+     max-width: 100%;
+     margin: 0 auto;
+	  
+}
+
+// Card styles
+/* Card styles for rotation */
+.rotate-container {
+     position: relative;
+     // Height: 25em // Height can ensure height consitency between front and back cards
+     .card-front {
+          width: 100%;
+          height: 100%;
+          transform: perspective(600px) rotateY(0deg);
+          backface-visibility: hidden;
+          transition: all .5s linear 0s;
+     }
+
+     .card-back {
+          @extend .card-front;
+          transform: perspective(1600px) rotateY(180deg);
+          position: absolute;
+          top: 0;
+     }
+
+     .rotate-card-front {
+          transform: perspective(1600px) rotateY(-180deg);
+     }
+
+
+     .rotate-card-back {
+          transform: perspective(1600px) rotateY(0deg);
+     }
+}
+
+
+/* Modified card styles */
+.card {
+     box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.5);
+     text-align: center;
+     background: $white;
+     border: 1px solid transparentize($carbon, 0.5);
+     border-radius: .25rem;
+
+     .card-header {
+          padding: .75rem 1.25rem;
+          margin-bottom: 0;
+          background-color: $neutral;
+          border-bottom: 1px solid transparentize($carbon, 0.5);
+
+          p {
+               margin: 0;
+          }
+     }
+
+     .card-background {
+          background: url('https://static.pexels.com/photos/443374/pexels-photo-443374.jpeg');
+          height: 8em;
+          background-position: center center;
+          background-size: cover;
+     }
+
+     .card-block {
+          padding: 1rem;
+			 .card-title {
+          	   margin-bottom: 0;
+     		 }
+          h4 ~ h4 {
+               margin: 1rem 0 0.5rem 0;
+          }
+     }
+
+     // Absolute positioning can be used if negative margins are not preffered.
+     .avatar {
+          max-width: 6em;
+          max-height: 6em;
+          margin-top: -4em;
+          margin-bottom: 1em;
+          border: 4px solid white;
+          border-radius: 50%;
+          background: radial-gradient(#e3e3e3, #329A7C, #109381);
+     }
+
+     .btn {
+          margin-bottom: 1em;
+     }
+
+     .social-links {
+          padding-left: 0;
+          list-style: none;
+          display: flex;
+          justify-content: center;
+
+          li {
+               margin: .5em;
+               a {
+                    font-size: 1.5em;
+               }
+          }
+     }
+}

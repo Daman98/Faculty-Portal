@@ -1,0 +1,362 @@
+
+<!-- saved from url=(0046)file:///home/daman/Documents/Daman_resume.html -->
+<html class="gr__nitish6174_github_io"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Resume generator</title>
+	<link rel="stylesheet" type="text/css" href="./Daman_resume_files/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/scroll.css"> -->
+	<link rel="stylesheet" type="text/css" href="./Daman_resume_files/column_scroll.css">
+	<link rel="stylesheet" type="text/css" href="./Daman_resume_files/thin_scroll.css">
+	<link rel="stylesheet" type="text/css" href="./Daman_resume_files/theme.css">
+	<link rel="stylesheet" type="text/css" href="./Daman_resume_files/main.css">
+	<link href="./Daman_resume_files/css" rel="stylesheet" type="text/css">
+	<link href="./Daman_resume_files/css(1)" rel="stylesheet" type="text/css">
+	<meta name="description" content="Online document editor like interface to create and save Resume">
+	<meta name="keywords" content="resume,cv,maker,creator,generator,iit,guwahati,iitg">
+</head>
+
+<body data-gr-c-s-loaded="true" class="" style=""><div class="gr-top-z-index gr-top-zero" tabindex="-1"><div class="_30JeG _2_2SE OkCGU" style="transform: translate(1478.22px, 981.766px);"><div class="_2A3ER"><div class="_1y1wn _2R8DE undefined"></div><div class="_24Em3"><div class="_21QaI _1L80j" tabindex="-1"></div></div><div class="_2-7o4"></div><div class="_24Em3"><div class="_21QaI _1pbTT _12R0B" data-action="editor" tabindex="-1">4</div></div></div></div></div><div style="visibility: hidden; top: -9999px; position: absolute; opacity: 0;"><div class="_30JeG _2_2SE OkCGU" style="transform: translate(1543.22px, 996.766px);"><div class="_2A3ER"><div class="_1y1wn _2R8DE undefined"></div><div class="_24Em3"><div class="_21QaI _1L80j" tabindex="-1"></div></div><div class="_2-7o4"></div><div class="_24Em3"><div class="_21QaI _1pbTT _12R0B" data-action="editor" tabindex="-1">4</div></div></div></div></div><div style="visibility: hidden; top: -9999px; position: absolute; opacity: 0;"></div>
+
+<div class="container-fluid">
+
+	<div class="row">
+
+
+		<div class="col-sm-3 no-print" id="left">
+
+			<div id="panel">
+
+				<div id="notice">
+					<h4><i class="glyphicon glyphicon-exclamation-sign"></i> This link is outdated as of now.<br></h4>
+					<h4>Please use <a href="http://nitish6174.com/resume-generator/">nitish6174.com</a> till the updates are added to this link.</h4>
+				</div>
+
+				<button class="btn btn-block btn-primary" data-toggle="modal" data-target="#usageModal">VIEW INSTRUCTIONS</button>
+				<button class="btn btn-block btn-success" onclick="window.print()">PRINT AS PDF</button>
+
+				<hr>
+
+				<h3 class="text-center">Template settings</h3>
+				<button id="defaultTemplateBtn" class="btn btn-block btn-danger" onclick="template(&#39;default&#39;);">Use official IITG template</button>
+				<button id="customTemplateBtn" class="btn btn-block btn-default" onclick="template(&#39;custom&#39;);">Use custom template</button>
+				<h5>
+					Minor
+					<div class="toggle-button">
+						<div class="toggle-option" data-toggle="minor" id="minorShow">Show</div>
+						<div class="toggle-option selected" data-toggle="minor" id="minorHide">Hide</div>
+					</div>
+				</h5>
+				<h5>
+					Contact lines
+					<div class="toggle-button">
+						<div class="toggle-option" data-toggle="contact" id="contact3">3</div>
+						<div class="toggle-option selected" data-toggle="contact" id="contact4">4</div>
+						<div class="toggle-option" data-toggle="contact" id="contact5">5</div>
+					</div>
+				</h5>
+				<h5>
+					Horizontal margin
+					<div class="toggle-button">
+						<div class="toggle-option" data-toggle="margin" id="margin1">1</div>
+						<div class="toggle-option" data-toggle="margin" id="margin2">2</div>
+						<div class="toggle-option" data-toggle="margin" id="margin3">3</div>
+						<div class="toggle-option selected" data-toggle="margin" id="margin4">4</div>
+						<div class="toggle-option" data-toggle="margin" id="margin5">5</div>
+						<div class="toggle-option" data-toggle="margin" id="margin6">6</div>
+					</div>
+				</h5>
+				<h5>
+					Line spacing
+					<div class="toggle-button">
+						<div class="toggle-option" data-toggle="line" id="line1">1</div>
+						<div class="toggle-option" data-toggle="line" id="line2">2</div>
+						<div class="toggle-option" data-toggle="line" id="line3">3</div>
+						<div class="toggle-option selected" data-toggle="line" id="line4">4</div>
+						<div class="toggle-option" data-toggle="line" id="line5">5</div>
+						<div class="toggle-option" data-toggle="line" id="line6">6</div>
+					</div>
+				</h5>
+				<h5>
+					Center column no.
+					<div class="toggle-button">
+						<div class="toggle-option multi-select" data-toggle="column" id="column1">1</div>
+						<div class="toggle-option multi-select" data-toggle="column" id="column2">2</div>
+						<div class="toggle-option multi-select" data-toggle="column" id="column3">3</div>
+						<div class="toggle-option multi-select" data-toggle="column" id="column4">4</div>
+					</div>
+				</h5>
+				
+				<br>
+				
+				<div id="customTemplateOptions">
+					<h5>
+						Font type
+						<div class="toggle-button">
+							<div class="toggle-option" data-toggle="font" id="fontVerdanaSans">1</div>
+							<div class="toggle-option" data-toggle="font" id="fontVerdanaSerif">2</div>
+							<div class="toggle-option" data-toggle="font" id="fontRoboto">3</div>
+							<div class="toggle-option selected" data-toggle="font" id="fontDroid">4</div>
+						</div>
+					</h5>
+					<h5>
+						Title case
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="case" id="caseNormal">Default</div>
+							<div class="toggle-option" data-toggle="case" id="caseUpper">Uppercase</div>
+						</div>
+					</h5>
+					<h5>
+						Title style
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="title" id="titleRuled">Ruled</div>
+							<div class="toggle-option" data-toggle="title" id="titleShaded">Shaded</div>
+						</div>
+					</h5>
+					<h5>
+						Title rule position
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="rule" id="ruleAbove">Above title</div>
+							<div class="toggle-option" data-toggle="rule" id="ruleBelow">Below title</div>
+						</div>
+					</h5>
+					<br>
+					<h5>
+						Image
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="image" id="imageShow">Show</div>
+							<div class="toggle-option" data-toggle="image" id="imageHide">Hide</div>
+						</div>
+					</h5>
+					<h5>
+						Roll No
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="roll" id="rollShow">Show</div>
+							<div class="toggle-option" data-toggle="roll" id="rollHide">Hide</div>
+						</div>
+					</h5>
+					<h5>
+						Course
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="course" id="course1">1 line</div>
+							<div class="toggle-option" data-toggle="course" id="course2">2 lines</div>
+						</div>
+					</h5>
+					<h5>
+						Table border
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="table" id="tableShow">Show</div>
+							<div class="toggle-option" data-toggle="table" id="tableHide">Hide</div>
+						</div>
+					</h5>
+					<h5>
+						Education year column
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="edyear" id="edyearFirst">First</div>
+							<div class="toggle-option" data-toggle="edyear" id="edyearLat">Last</div>
+						</div>
+					</h5>
+					<h5>
+						Experience layout
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="experience" id="experience1">L1</div>
+							<div class="toggle-option" data-toggle="experience" id="experience2">L2</div>
+						</div>
+					</h5>
+					<h5>
+						Projects layout
+						<div class="toggle-button">
+							<div class="toggle-option selected" data-toggle="projects" id="projects1">L1</div>
+							<div class="toggle-option" data-toggle="projects" id="projects2">L2</div>
+						</div>
+					</h5>
+					<br>
+				</div>
+
+				<h5>
+					<button class="btn btn-sm btn-block btn-primary" data-toggle="modal" data-target="#sectionToggleModal">Show/Hide sections</button>
+				</h5>
+
+				<hr>
+
+				<h3 class="text-center">Lists and points</h3>
+				<button class="btn btn-block btn-xs btn-success" onclick="insertList();">+ Insert sub-list</button>
+				<button class="btn btn-block btn-xs btn-warning" onclick="decreaseIndent();">&lt;&lt; Decrese indentation</button>
+				<button class="btn btn-block btn-xs btn-warning" onclick="increaseIndent();">&gt;&gt; Increase indentation</button>
+				<h5>
+					List style :
+					<div class="toggle-button">
+						<button class="btn btn-xs custom-button" onclick="changeListStyle(&#39;disc&#39;);">⚫</button>
+						<button class="btn btn-xs custom-button" onclick="changeListStyle(&#39;circle&#39;);">⚪</button>
+						<button class="btn btn-xs custom-button" onclick="changeListStyle(&#39;square&#39;);">■</button>
+						<button class="btn btn-xs custom-button" onclick="changeListStyle(&#39;dash&#39;);">-</button>
+						<button class="btn btn-xs custom-button" onclick="changeListStyle(&#39;decimal&#39;);">1.</button>
+						<button class="btn btn-xs custom-button" onclick="changeListStyle(&#39;upper-roman&#39;);">I.</button>
+						<button class="btn btn-xs custom-button" onclick="changeListStyle(&#39;lower-roman&#39;);">i.</button>
+						<button class="btn btn-xs custom-button" onclick="changeListStyle(&#39;upper-alpha&#39;);">A.</button>
+						<button class="btn btn-xs custom-button" onclick="changeListStyle(&#39;lower-alpha&#39;);">a.</button>
+					</div>
+				</h5><ul class="decimal" style="margin-left: 0px;"><li>Sub-point 1 : Description</li><li>Sub-point 2 : Description</li></ul>
+
+			</div>
+
+		</div>
+
+
+		<div class="col-sm-9 text-center" id="right">
+
+			<div id="page" class="droid" contenteditable="true" data-gramm_id="bd1206d7-5699-84b6-c48b-50a43d12c6a6" data-gramm="true" spellcheck="false" data-gramm_editor="true">				<div class="row" style="margin-bottom:10px;">				<div class="col-sm-12">					<div style="display: inline-block; margin-top: 25px;" id="image_box">						<img src="./Daman_resume_files/iitg_logo.png" height="80" width="80"> 					</div>					<div id="info" style="display:inline-block;">						<h2 id="contentName">Daman Tekchanadani</h2>						<h5 id="contentRoll">Roll <g class="gr_ gr_145 gr-alert gr_gramm gr_inline_cards gr_run_anim Style multiReplace" id="145" data-gr-id="145">Number :</g>&nbsp;160101024</h5>						<h5 id="contentCourse">B.Tech - Computer Science and Engineering</h5>						<h5 id="contentBranch">XXX Engineering</h5>						<h5 id="contentMinor" style="display: none;">Minor in XXX</h5>						<h5 id="contentCollege">Indian Institute of Technology Guwahati</h5>					</div>					<div id="contact" style="float:right; display:inline-block;">						+91-9126874508<br>damantekchandani5@gmail.com<br>daman@iitg.ac.in<br>						<span class="light" id="contactLink1">www.linkedin.com/in/daman98<br></span> 						<span class="light" id="contactLink2">github.com/xyz123<br></span> 					</div>				</div>				</div>			 				<div class="section" id="sectionEducation">					<div class="section-title ruled rule-above">						<hr class="hr-above"> 						<h4><strong>Education</strong></h4>						<hr class="hr-below"> 					</div>					<ul class="nobullet">					<li>						<table class="table customBordered" id="educationTable">
+							<tbody><tr>
+								<td class="header"><strong>Year</strong></td>
+								<td class="header"><strong>Degree / Certificate</strong></td>
+								<td class="header"><strong>Institute / Board</strong></td>
+								<td class="header"><strong>CGPA/Percentage</strong></td>
+							</tr>
+							<tr>
+								<td>2016- Present</td>
+								<td>B.Tech</td>
+								<td>Indian Institute of Technology, Guwahati</td>
+								<td>7.21 (Current)</td>
+							</tr>
+							<tr>
+								<td>2016</td>
+								<td>Senior secondary</td>
+								<td>CBSE board</td>
+								<td>91.0%</td>
+							</tr>
+							<tr>
+								<td>2014</td>
+								<td>Secondary</td>
+								<td>CBSE board</td>
+								<td>9.8</td>
+							</tr>
+						</tbody></table>					</li>					</ul>				</div>				<div class="section" id="sectionExperience">					<div class="section-title ruled rule-above">						<hr class="hr-above"> 						<h4><strong>Experience</strong></h4>						<hr class="hr-below"> 					</div>					<ul>					<li>						<div>	 						<div class="title">Web Developer, Techniche</div><div class="time right">Oct 2017 - Present</div></div><div>						<div class="text">Analysed app usage statistics to recommend items based on user's preference.&nbsp; &nbsp; &nbsp;&nbsp;<i style="font-size: 14px; color: rgb(102, 102, 102);">www.techniche.org</i></div></div></li>					</ul>				</div>				<div class="section" id="sectionPublications">					<div class="section-title ruled rule-above">						<hr class="hr-above"> 						<h4><strong style="color: inherit;">Projects</strong></h4></div></div><div class="section" id="sectionProjects"><div class="section-title ruled rule-above">						<hr class="hr-below"> 					</div>					<ul>					<li>						<div>		 						<div class="title">Faculty Portal</div><div class="time right">Nov 2017</div>						</div>						<div>						<div class="mentor tab">Dr. Santosh Biswas</div></div>						<div>						<div class="text">Graphical interface to share files over institute's network.</div>						</div>					</li>					<li>						<div>						<div class="title">Papetier</div><div class="time right">Oct 2017</div>						</div>						<div>						<div class="mentor tab">Microsoft Code.Fun.do - 2017</div><div class="link right">goo.gl/link</div>						</div>						<div>						<div class="text">Graphical interface to share files over institute's network.</div>						</div>					</li>					<li>						<div><div class="title">Smart Parking System</div><div class="time right">Oct 2017</div>						</div>						<div><div class="mentor tab">Kriti( Inter-Hostel Technical Competition )-2017</div><div class="link right">www.xyz.in</div>						</div>						<div>						<div class="text">Graphical interface to share files over institute's network.</div></div></li>					</ul>				</div>			 				<div class="section" id="sectionSkills">					<div class="section-title ruled rule-above">						<hr class="hr-above"> 						<h4><strong>Technical skills</strong></h4>						<hr class="hr-below"> 					</div>					<ul style="padding-left: 30px;" class="disc">					<li>						<strong><span class="skillCategory">Programming languages</span> :C,</strong> 						C++, Python, Core Java*</li>					<li>						<strong><span class="skillCategory">Web technologies</span> :</strong> 						HTML, CSS, Javascript*, Django, Flask*</li>					<li>						<strong><span class="skillCategory">Database management</span> :</strong>&nbsp;SQLite, mySQL 					</li>					<li>						<strong><span class="skillCategory"><g class="gr_ gr_214 gr-alert gr_gramm gr_inline_cards gr_run_anim Style multiReplace" id="214" data-gr-id="214">Miscellaneous :</g>&nbsp;&nbsp;</span></strong>Microsoft Office, Latex, Arduino, Git/CVS</li>					<li>						<strong><span class="skillCategory">Operating system</span> :</strong> 						Windows, Linux 					</li>					<div class="star"><i>*<span class="light"> Elementary proficiency</span></i></div>					</ul>				</div>				<div class="section" id="sectionResponsibility">					<div class="section-title ruled rule-above">						<hr class="hr-above"> 						<h4><strong>Positions of Responsibility</strong></h4>						<hr class="hr-below"> 					</div>					<ul>						<li>Technical Secretary, Siang Hostel IIT Guwahati (2017-2018)</li><li>Under Secretary General Administration, IIT Guwahati Model United Nations (2016-2017)</li>						<li>City representative, Indore, Technothlon 2017</li>					</ul>				</div>				<div class="section" id="sectionAchievements">					<div class="section-title ruled rule-above">						<hr class="hr-above"> 						<h4><strong>Achievements</strong></h4></div><ul>					<li>						<span class="title">Joint Entrance Examination 2016 (Advanced) : </span> 						<span class="text">Secured All India Rank 488 among 0.15 million candidates appearing for the test.</span></li>					<li><span class="title">National Talent Search Examination 2014 :&nbsp;</span>National level : Bagged 7th position among 250 candidates.					</li>					</ul>				</div>			 				<div class="section" id="sectionCourses">					<div class="section-title ruled rule-above">						<hr class="hr-above"> 						<h4><strong>Key courses <g class="gr_ gr_144 gr-alert gr_gramm gr_inline_cards gr_run_anim Grammar multiReplace" id="144" data-gr-id="144">taken</g></strong></h4>						<hr class="hr-below"> 					</div>					<ul>					<div class="row">						<div class="col-sm-6">							<li>Data Structures and Algorithms</li>							<li>Complex Calculus, PDEs and Integral
+Transforms</li>							<li>Digital Electronics</li>						</div>						<div class="col-sm-6">							<li>Formal Logic, Abstract Algebra and
+Combinatorics</li>							<li>Linear Algebra, Multi-variable Calculus and
+Differential Equations</li>						</div>					</div>					<div class="star"><i>*<span class="light"> To be completed in Nov 2016</span></i></div>					</ul>				</div>			 				<div class="section" id="sectionCurricular">					<div class="section-title ruled rule-above">						<hr class="hr-above"> 						<h4><strong>Extracurriculars</strong></h4>						<hr class="hr-below"> 					</div>					<ul>					<li>NSO - Football.&nbsp;</li>					</ul>				</div>				 				<div class="section" id="sectionInterest">					<div class="section-title ruled rule-above">						<hr class="hr-above"> 						<h4><strong>Fields of interest (OR Research interests)</strong></h4>						<hr class="hr-below"> 					</div>					<ul>					<div class="row">						<div class="col-sm-6">							<li>Advanced XYZ</li>							<li>ABC design</li>						</div>						<div class="col-sm-6">							<li>XYZ processing</li>							<li>Robotics</li>						</div>					</div>					</ul>				</div>				 				<div class="section" id="sectionFooterMessage">					<div class="section-title ruled rule-above">						<hr class="hr-above"> 						<h6><strong>(References available on request)</strong></h6>					</div>				</div>			</div><grammarly-btn><div class="_1BN1N Kzi1t _1v-Lt _3MyEI MoE_1 _2DJZN" style="z-index: 2; transform: translate(1055.47px, 1511.77px);"><div class="_1HjH7"><div title="Found 4 errors in text" class="_3qe6h">4</div></div></div></grammarly-btn>
+			
+		</div>
+
+
+	</div>
+
+</div>
+
+
+<div class="modal fade" id="usageModal" tabindex="-1" style="display: none;">
+	<div class="modal-dialog">
+		<div class="modal-content">
+
+			<div class="modal-body">
+				<button type="button" class="close" data-dismiss="modal">×</button>
+				<h5><strong>Note : </strong>Use <strong>Google Chrome</strong>. Other browsers are unable to print properly and don't support some features.</h5>
+				<h4><strong>Editing content</strong></h4>
+				<ul>
+					<li>Edit the Resume content just like a normal document editor (cut,copy,undo etc).</li>
+					<li>Entire sections can be added, reordered, removed just by cut,copy,pasting method. (Use "show/hide sections" button to hide but retain content)</li>
+					<li>To remove a section/point/mentor/link etc, just delete it.</li>
+					<li>For styled/formatted text, select the text portion and press <kbd>Ctrl+b</kbd> for bold, <kbd>Ctrl+i</kbd> for italics, <kbd>Ctrl+u</kbd> for underlined text.</li>
+					<li>Use "Insert sub-list" button to insert sub-points in a point. (like as in achivements section)</li>
+					<li>Change indentation and bullet style of the list where your cursor is placed.</li>
+				</ul>
+				<h4><strong>Editing template</strong></h4>
+				<ul>
+					<li>Use the options in the left panel to modify the template/look.</li>
+					<li>In case you want to use a different template than the official IITG template, choose the corresponding button to see other setting options. (For on-campus purpose, you must use official IITG template)</li>
+				</ul>
+				<h4><strong>Saving</strong></h4>
+				<ul>
+					<li>Close any popup box (like this instructions popup	) if opened. Press <kbd>Ctrl+s</kbd></li>
+					<li>This will save the webpage (a .html file and a folder will be saved. Keep them together)</li>
+					<li>Open the .html file in browser from your PC.</li>
+					<li>This way, you can maintain multiple saved copies for each profile/template on your PC.</li>
+				</ul>
+				<h4><strong>Print as PDF</strong></h4>
+				<ul>
+					<li>Adjust margin in the Chrome's print dialog box. You may need it if a section is getting split between two pages. Print each page separately with different margins if needed.</li>
+					<li>If URLs or some stray text is being shown in print preview, disable the options "Include headers and footers","Include background graphics" etc in the print dialog box.</li>
+				</ul>
+				<h4><strong>Merge and compress PDFs</strong></h4>
+				<ul>
+					<li>If you can run python file on your machine, use the script provided on <a class="blue" target="_blank" href="https://github.com/nitish6174/resume-generator">project's github</a></li>
+					<li><a class="blue" target="_blank" href="http://www.pdfmerge.com/">pdfmerge.com/</a> is one of the best sites available for this task.</li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="sectionToggleModal" tabindex="-1">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<button type="button" class="close" data-dismiss="modal">×</button>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true" value="sectionEducation">Education</label></div>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true" value="sectionExperience">Experience</label></div>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true" value="sectionPublications">Publications</label></div>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true" value="sectionProjects">Projects</label></div>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true" value="sectionSkills">Technical Skills</label></div>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true" value="sectionResponsibility">Positions of Responsibility</label></div>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true" value="sectionAchievements">Achievements</label></div>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true" value="sectionCourses">Key courses taken</label></div>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" checked="true" value="sectionCurricular">Extra curriculars</label></div>
+				<div class="checkbox"><label><input type="checkbox" name="sectionToggle" value="sectionFooterMessage">References message</label></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<script type="text/javascript" src="./Daman_resume_files/jquery.min.js"></script>
+<script type="text/javascript" src="./Daman_resume_files/bootstrap.min.js"></script>
+<script type="text/javascript" src="./Daman_resume_files/main.js"></script>
+
+
+
+<span class="gr__tooltip"><span class="gr__tooltip-content"></span><i class="gr__tooltip-logo"></i><span class="gr__triangle"></span></span><div><div class="gr_-editor gr-iframe-first-load" style="display: none;"><div class="gr_-editor_back"></div><iframe class="gr_-ifr gr-_dialog-content" src="./Daman_resume_files/saved_resource.html"></iframe></div></div><grammarly-card><div></div></grammarly-card><script>(function(){(function (el) {
+        function removeFromDom(alert) {
+            if (alert.parentNode) if (alert.childNodes.length > 1) {
+                for (var f = document.createDocumentFragment(); alert.childNodes.length > 0; ) f.appendChild(alert.childNodes[0]);
+                alert.parentNode.replaceChild(f, alert);
+            } else alert.firstChild ? alert.parentNode.replaceChild(alert.firstChild, alert) : alert.parentNode.removeChild(alert);
+        }
+        function clean(_el) {
+            if (_el) try {
+                for (var alerts = _el.querySelectorAll(".gr_"), len = alerts.length, i = 0; i < len; i++) removeFromDom(alerts[i]);
+            } catch (e) {}
+        }
+        function redefineInnerHTML(el) {
+            try {
+                Object.defineProperty(el, "innerHTML", {
+                    get: function() {
+                        try {
+                            var r = el.ownerDocument.createRange();
+                            r.selectNodeContents(el);
+                            var cnt = r.cloneContents(), d = document.createElement("div");
+                            return d.appendChild(cnt), clean(d), d.innerHTML;
+                        } catch (e) {
+                            return "";
+                        }
+                    },
+                    set: function(value) {
+                        try {
+                            var r = el.ownerDocument.createRange();
+                            r.selectNodeContents(el), r.deleteContents();
+                            var df = r.createContextualFragment(value);
+                            el.appendChild(df);
+                        } catch (e) {}
+                    }
+                });
+            } catch (e) {}
+        }
+        if (el) {
+            var nativeClone = el.cloneNode;
+            el.cloneNode = function(val) {
+                var n = nativeClone.call(el, val);
+                if (el.classList.contains("mceContentBody")) n.innerHTML = el.innerHTML, clean(n); else try {
+                    redefineInnerHTML(n);
+                } catch (e) {}
+                return n;
+            }, redefineInnerHTML(el);
+        }
+    })(document.querySelector("[data-gramm_id='bd1206d7-5699-84b6-c48b-50a43d12c6a6']")) })()</script></body></html>

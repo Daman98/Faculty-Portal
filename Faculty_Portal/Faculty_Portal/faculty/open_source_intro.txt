@@ -1,0 +1,2 @@
+Hi there,
+I am a sophomore currently doing my B.tech in Computer Science from IIT Guwahati. I have done some projects in Python and Django and new to react-native. Can someone suggest me how can I start contributing to Zulip.

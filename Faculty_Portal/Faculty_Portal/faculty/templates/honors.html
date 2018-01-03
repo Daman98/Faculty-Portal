@@ -1,0 +1,110 @@
+{% extends 'dashboardbase.html' %}
+{%block honors%}class="active-menu"{%endblock%}
+{% block content %}
+     <div id="page-wrapper" class="page-wrapper-cls">
+        <div id="page-inner">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="page-head-line">Honors and Recognitions</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div>
+                        <button class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
+                          Add a New Recognition
+                        </button>
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title" id="myModalLabel">Enter Details</h4>
+                                    </div>
+                                    <form method="POST" class="post-form">
+                                        {% csrf_token %}
+                                        {{ form.as_p }}
+                                        <div class="modal-footer">
+                                        <button type="submit" class="save btn btn-default">Save</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="page-head-line"><i class="fa fa-shield"></i>  Awards</h2>
+                        </div>
+                    </div>
+                    <div>
+                        {% for post in honor %}
+                        {% ifequal post.honor_type "Award" %}
+                             <div class="col-md-4 col-sm-4">
+                                <div class="panel panel-success">
+                                     <div class="panel-heading">{{ post.honor_name }}</div>
+                                     <div class="panel-body">
+                                        <p>By: {{ post.honor_from }}</p>
+                                        <p>Year: {{ post.year }}</p> 
+                                    </div>
+                                    <div class="panel-footer">
+                                        <a href='/honor/{{ post.id }}'><p><i class="glyphicon glyphicon-trash"></i></p></a>
+                                        </div>
+                                    </div>
+                                </div>
+                        {% endifequal %}
+                        {% endfor %}
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="page-head-line"><i class="fa fa-certificate"></i>  Achievement</h2>
+                        </div>
+                    </div>
+                    <div>
+                        {% for post in honor %}
+                        {% ifequal post.honor_type "Achievement" %}
+                             <div class="col-md-4 col-sm-4">
+                                <div class="panel panel-info">
+                                     <div class="panel-heading">{{ post.honor_name }}</div>
+                                     <div class="panel-body">
+                                        <p>By: {{ post.honor_from }}</p>
+                                        <p>Year: {{ post.year }}</p> 
+                                    </div>
+                                    <div class="panel-footer">
+                                        <a href='/honor/{{ post.id }}'><p><i class="glyphicon glyphicon-trash"></i></p></a>
+                                        </div>
+                                    </div>
+                                </div>
+                        {% endifequal %}
+                        {% endfor %}
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2 class="page-head-line"><i class="fa fa-star"></i>  Others</h2>
+                        </div>
+                    </div>
+                    <div>
+                        {% for post in honor %}
+                        {% ifequal post.honor_type "Others" %}
+                             <div class="col-md-4 col-sm-4">
+                                <div class="panel panel-danger">
+                                     <div class="panel-heading">{{ post.honor_name }}</div>
+                                     <div class="panel-body">
+                                        <p>By: {{ post.honor_from }}</p>
+                                        <p>Year: {{ post.year }}</p> 
+                                    </div>
+                                    <div class="panel-footer">
+                                        <a href='/honor/{{ post.id }}'><p><i class="glyphicon glyphicon-trash"></i></p></a>
+                                        </div>
+                                    </div>
+                                </div>
+                        {% endifequal %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

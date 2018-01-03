@@ -1,0 +1,70 @@
+{% extends 'dashboardbase.html' %}
+{%block profile%}class="active-menu"{%endblock%}
+{% block content %}
+<style>
+
+label
+{
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: Helvetica;
+}
+
+      input[type=text], select 
+      {
+        width: 260px;
+        align-self: center;
+        vertical-align: center;
+        padding: 4px 16px;
+        margin: 4px 4px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: #DDD;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 4.25rem;
+        box-sizing:border-box;
+    -moz-box-sizing:border-box;
+      }
+
+</style>
+ 
+     <div id="page-wrapper" class="page-wrapper-cls">
+            <div id="page-inner">
+                <div class="col-lg-8 col-md-7">
+                        <div class="card">
+                            <div class="header">
+                                <h4 class="title">Edit Profile</h4>
+                            </div>
+
+
+                              <form method="post" enctype="multipart/form-data" data-ajax="false">
+                                    {% csrf_token %}
+                                    {% for field in form %}
+                                      <p>
+                                        {{ field.label_tag }}<br>
+                                        {{ field }}
+                                        {% if field.help_text %}
+                                          <small style="color: grey">{{ field.help_text }}</small>
+                                        {% endif %}
+                                        
+                                        {% for error in field.errors %}
+                                          <p style="color: red">{{ error }}</p>                                       
+                                        {% endfor %}
+                                      </p>
+                                    {% endfor %}
+                                    <button type="submit">Submit</button>
+                                </form>
+                                <br>
+                                <br>
+                               <form action="/email" method="get">
+                                 <input type="submit" class="btn" value="mybtn" name="mybtn">
+                                </form>
+
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+{% endblock %}
